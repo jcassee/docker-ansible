@@ -12,6 +12,7 @@ RUN apt-get update -q && \
         python-jinja2 \
         python-paramiko \
         python-passlib \
+        python-pip \
         python-six \
         python-support \
         python-yaml \
