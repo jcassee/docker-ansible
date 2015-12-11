@@ -19,9 +19,9 @@ RUN apt-get update -q && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY ansible_*.deb /tmp
-RUN DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/ansible_*.deb && \
-    rm /tmp/ansible_*.deb
+COPY ansible_2.0.0-0.git201512071813.cc98528.stable20~unstable_all.deb /tmp
+RUN DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/ansible_2.0.0-0.git201512071813.cc98528.stable20~unstable_all.deb && \
+    rm /tmp/ansible_2.0.0-0.git201512071813.cc98528.stable20~unstable_all.deb
 
 WORKDIR /ansible
 
