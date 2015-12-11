@@ -1,0 +1,7 @@
+.id_ansible
+.git
+.gitignore
+.fact-cache/*
+.ssh-cm/*
+README.md
+activate
