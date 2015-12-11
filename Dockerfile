@@ -28,4 +28,4 @@ WORKDIR /ansible
 
 ENV ANSIBLE_PLAYBOOK site.yml
 
-CMD ["bash", "-c", "ansible-playbook \"$ANSIBLE_PLAYBOOK\""]
+CMD ["bash", "-c", "ansible-playbook \"$ANSIBLE_PLAYBOOK\" -vvvv"]
