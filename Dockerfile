@@ -4,8 +4,8 @@ MAINTAINER Go About <tech@goabout.com>
 
 # Install Ansible 2 from a PPA when it is released. For now, build it ourselves.
 
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update -q && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         python \
         python-crypto \
         python-httplib2 \
