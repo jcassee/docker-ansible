@@ -2,28 +2,12 @@ FROM ubuntu:14.04
 
 MAINTAINER Go About <tech@goabout.com>
 
-# Install Ansible 2 from a PPA when it is released. For now, build it ourselves.
-
-RUN apt-get update -q && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -yq \
-        python \
-        python-crypto \
-        python-httplib2 \
-        python-jinja2 \
-        python-paramiko \
-        python-passlib \
-        python-pip \
-        python-six \
-        python-support \
-        python-yaml \
-        sshpass \
-    && \
+RUN apt-get install -yq software-properties-common && \
+    apt-add-repository -y ppa:ansible/ansible && \
+    apt-get update -q && \
+    apt-get install -yq ansible && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-COPY ansible_*.deb /tmp/
-RUN DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/ansible_*.deb && \
-    rm /tmp/ansible_*.deb
 
 WORKDIR /ansible
 
